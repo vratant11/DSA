@@ -2,7 +2,7 @@ class Solution {
 public:
     int minSteps(string s, string t) {
         int sum=0;
-        map<char,int>m;
+        unordered_map<char,int>m;
         for(int i=0;i<s.length();i++){
             m[s[i]]++;
         }
