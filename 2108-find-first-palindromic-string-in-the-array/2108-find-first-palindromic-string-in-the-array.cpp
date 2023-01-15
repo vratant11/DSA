@@ -1,11 +1,11 @@
 bool isPalindrome(string str){
         int left=0 ;
-        int right=str.size()-1;
-        while( left<= right ){
-            if( str[left] != str[right] )
+        int rigt=str.size()-1;
+        while( left<= rigt ){
+            if( str[left] != str[rigt] )
                 return false;
             left++;
-            right--;
+            rigt--;
         }
         return true;
     }
