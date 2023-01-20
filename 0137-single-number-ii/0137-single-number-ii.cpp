@@ -11,6 +11,7 @@ public:
         for (auto i : mp){
             if(i.second==1){
                 ans=i.first;
+                break;
             }
         }
         return ans;
