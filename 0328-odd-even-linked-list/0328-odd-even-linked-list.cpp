@@ -26,7 +26,7 @@ public:
         evenNodes = head->next;
         evenNodesHead = evenNodes;
 
-        while(evenNodes && evenNodes->next)
+        while(evenNodes && evenNodes->next!=NULL)
         {
             oddNodes->next = evenNodes->next;
             evenNodes->next = evenNodes->next->next;
