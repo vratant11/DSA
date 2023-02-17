@@ -15,12 +15,12 @@ public:
         if(!head || !head->next || !head->next->next)
             return head;
 
-        ListNode* oddNodes;
+        ListNode* oddNode;
         ListNode* evenNodes = NULL;
         ListNode* oddNodesHead;
         ListNode* evenNodesHead;
 
-        oddNodes = head;
+        oddNode = head;
         oddNodesHead = head;
 
         evenNodes = head->next;
@@ -28,14 +28,14 @@ public:
 
         while(evenNodes && evenNodes->next!=NULL)
         {
-            oddNodes->next = evenNodes->next;
+            oddNode->next = evenNodes->next;
             evenNodes->next = evenNodes->next->next;
 
-            oddNodes = oddNodes->next;
+            oddNode = oddNode->next;
             evenNodes = evenNodes->next;
         }
 
-        oddNodes->next = evenNodesHead;
+        oddNode->next = evenNodesHead;
 
         return oddNodesHead;
     }
