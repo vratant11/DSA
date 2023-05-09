@@ -1,44 +1,43 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        vector<int>ans;
-        int r=matrix.size();
-        int c=matrix[0].size();
-        int count=0;
-        int total=r*c;
-        int startr=0;
-        int startc=0;
-        int endrow=r-1;
-        int endcol=c-1;
+        vector<int> ans;
+        int row = matrix.size();
+        int col = matrix[0].size();
         
-        while(count<total){
-            //print starting row
-            for(int index = startc ;count<total && index<=endcol ; index++){ 
-            ans.push_back(matrix[startr][index]); 
+        int startRow = 0;
+        int startCol = 0;
+        int endRow = row-1;
+        int endCol = col -1;
+        
+        int count = 0;
+        int total = row*col;
+        
+        while(count< total){
+            for(int i = startCol; count<total && i<= endCol; i++){
+                ans.push_back(matrix[startRow][i]);
                 count++;
             }
-            startr++;
+            startRow++;
             
-             for(int index = startr ;count<total && index<=endrow ; index++){ 
-            ans.push_back(matrix[index][endcol]); 
-                 count++;
+            for(int i = startRow; count<total && i<= endRow; i++){
+                ans.push_back(matrix[i][endCol]);
+                count++;
             }
-            endcol--;
+            endCol--;
             
-             for(int index = endcol ;count<total && index>=startc ; index--){ 
-            ans.push_back(matrix[endrow][index]);  
-                 count++;
+            for(int i = endCol; count<total && i>=startCol; i--){
+                ans.push_back(matrix[endRow][i]);
+                count++;
             }
-            endrow--;
+            endRow--;
             
-             for(int index = endrow ;count<total && index>=startr ; index--){ 
-            ans.push_back(matrix[index][startc]);
-                 count++; 
+            for(int i = endRow; count<total && i>=startRow; i--){
+                ans.push_back(matrix[i][startCol]);
+                count++;
             }
-            startc++;            
+            startCol++;
         }
         return ans;
     }
 };
-
-
